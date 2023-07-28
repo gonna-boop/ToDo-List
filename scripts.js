@@ -1,14 +1,4 @@
-"use strict";
-class FullTask {
-    constructor(n, d, e) {
-        this.taskName = n;
-        this.taskDate = d;
-        this.taskDescription = e;
-    }
-    format() {
-        return `${this.taskName} should be completed by ${this.taskDate}: ${this.taskDescription}`;
-    }
-}
+import FullTask from './classes/tasks.js';
 const newTask = new FullTask('Test', new Date('2023-08-01'), 'Test');
 let tasks = [];
 function addTask() {
@@ -21,3 +11,4 @@ function addTask() {
         console.log(task.format());
     });
 }
+document.getElementById("addBtn").addEventListener("click", addTask);
