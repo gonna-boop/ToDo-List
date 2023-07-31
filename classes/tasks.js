@@ -1,10 +1,11 @@
 export default class FullTask {
-    constructor(n, d, e) {
+    constructor(n, d, e, c) {
         this.taskName = n;
         this.taskDate = d;
         this.taskDescription = e;
+        this.taskComplete = c;
     }
     format() {
-        return `${this.taskName} should be completed by ${this.taskDate}: ${this.taskDescription}`;
+        return `${this.taskDescription} | Complete by ${this.taskDate}`;
     }
 }

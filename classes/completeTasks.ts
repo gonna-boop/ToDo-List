@@ -2,16 +2,18 @@ import  {hasFormatter} from '../interfaces/hasformatter.js'
 
 export default class CompleteTask implements hasFormatter{
     taskName: string;
-    taskDate: Date;
+    taskDate: string;
     taskDescription: string;
+    taskComplete: string;
   
-    constructor(n: string, d: Date, e: string){
+    constructor(n: string, d: string, e: string, c: string){
       this.taskName = n;
       this.taskDate = d;
       this.taskDescription = e;
+      this.taskComplete = c;
     }
   
     format() {
-      return `${this.taskName} should be completed by ${this.taskDate}: ${this.taskDescription}`;
+      return `${this.taskName} is completed!`;
     } 
   }
