@@ -4,7 +4,7 @@ html, body {
 }
 
 .sidebar {
-    height: 100vh;
+  height: 100vh;
 }
 
 .main-container {
@@ -21,6 +21,20 @@ html, body {
     margin-left: 10%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    list-style-type: none;
+    /* border: 1px solid black; */
+}
+
+.fullTask {
+  width: 135vh;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 #single-task {
