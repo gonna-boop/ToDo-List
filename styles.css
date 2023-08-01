@@ -8,7 +8,13 @@ html, body {
 }
 
 .main-container {
-    display: flex;
+    display: flex;   
+}
+
+.nav-item:hover {
+    /* border: 1px solid white;
+    border-radius: 1vh; */
+    font-weight: bold;
 }
 
 .task-container {
@@ -86,9 +92,13 @@ html, body {
   }
   
   input:checked + .slider {
-    background-color: #14972a;
+    background-color: #14972a;  
   }
   
+  .linethrough {
+    text-decoration: line-through; 
+  }
+
   input:focus + .slider {
     box-shadow: 0 0 1px #14972a;
   }

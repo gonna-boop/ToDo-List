@@ -1,43 +1,36 @@
 import { hasFormatter } from "../interfaces/hasformatter.js";
+import { Task } from "../scripts.js";
+
 
 export class ListTemplate {
     constructor(private container: any){}
 
-    render(item: hasFormatter, heading: string, pos: 'start' | 'end'){
-
-        //maybe change this to a literal where different elements are sent from 
-        //an array
-        //each item in the array would be looped through and pasted,
-        //based on which page/array is selected (this week, month, etc.)
-        //if you select a new array, it resets the page and recreats the content based 
-        //on THAT array
+    render(task: Task){
+        
+        console.log(task);
         const divOne = document.createElement('div');
         const divTwo = document.createElement('div');
 
         const li = document.createElement('li');
         const h4 = document.createElement('h4');
-        h4.innerText = heading;
+        h4.innerText = task.taskName;
         li.append(h4);
 
         const p = document.createElement('p');
-        p.innerText = item.format();
+        p.innerText = task.format();
         li.append(p);
         divOne.append(li);
 
         const newDiv = document.createElement('div');
-        const toggle = `<div class="task-2"><label class="switch"><input type="checkbox"><span class="slider round"></span></label></div>`
+        const toggle = `<div class="task-2"><label class="switch"><input type="checkbox"><span class="slider round" id="slider"></span></label></div>`
         newDiv.innerHTML += toggle; 
         divTwo.append(newDiv);
         divOne.append(newDiv);
         
         divOne.classList.add('fullTask');
         divOne.classList.add('mb-3');
+
+        this.container.append(divOne, divTwo);
         
 
-          if (pos === 'start'){
-            this.container.prepend(divOne, divTwo);
-        } else {
-            this.container.append(divOne, divTwo);
-            }   
-        }     
-    }
+    }}
