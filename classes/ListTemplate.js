@@ -3,6 +3,12 @@ export class ListTemplate {
         this.container = container;
     }
     render(item, heading, pos) {
+        //maybe change this to a literal where different elements are sent from 
+        //an array
+        //each item in the array would be looped through and pasted,
+        //based on which page/array is selected (this week, month, etc.)
+        //if you select a new array, it resets the page and recreats the content based 
+        //on THAT array
         const divOne = document.createElement('div');
         const divTwo = document.createElement('div');
         const li = document.createElement('li');
